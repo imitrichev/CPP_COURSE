@@ -25,12 +25,12 @@
 
 	TEST(Test_Complex, Test_Complex_functional)
 	{
-		c4=my_test();
+		Complex c4=my_test();
 		EXPECT_EQ(c4.Re(),-13);
 		EXPECT_EQ(c4.Im(),76);
 	}
 
-int main(void)
+int main(int argc, char **argv)
 { 
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();

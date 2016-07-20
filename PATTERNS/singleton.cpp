@@ -24,7 +24,7 @@ public:
     U returnNewState(const vector<U*> & objects)
     {
         int alive_count=countAlive(objects);
-        applyRule(objects,alive_count);
+        return applyRule(objects,alive_count);
     }
     virtual U applyRule(const vector<U*> & objects, int alive_count) = 0;
     virtual int countAlive(const vector<U*> & objects) = 0;
