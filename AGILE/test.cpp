@@ -26,8 +26,8 @@
 	TEST(Test_Complex, Test_Complex_functional)
 	{
 		Complex c4=my_test();
-		EXPECT_EQ(c4.Re(),-13);
-		EXPECT_EQ(c4.Im(),76);
+		EXPECT_EQ(c4.Re(),-22);
+		EXPECT_EQ(c4.Im(),116);
 	}
 
 int main(int argc, char **argv)

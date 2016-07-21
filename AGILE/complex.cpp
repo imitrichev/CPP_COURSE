@@ -25,7 +25,7 @@ const Complex& Complex::operator=(const Complex &right)
 
 Complex Complex::operator*(const Complex &operando2) const
 {
-    return ((real * operando2.real) - (real * operando2.imaginary), (real * operando2.imaginary) - (imaginary*operando2.real));
+    return Complex((real * operando2.real) - (imaginary * operando2.imaginary), (real * operando2.imaginary) + (imaginary*operando2.real));
 }
 
 const bool  Complex::operator==(const Complex &right) const
