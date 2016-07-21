@@ -18,7 +18,8 @@
 		Complex c1(4,5);
 		Complex c2(8,9);
 		Complex c3(4,5);
-		Complex c4 = (c1 + c2)* c3;
+		Complex c4 = (c1 + c2);
+		c4 = c4 * c3;
 		// maybe, more and more code...
 		return c4;
 	}
@@ -26,8 +27,8 @@
 	TEST(Test_Complex, Test_Complex_functional)
 	{
 		Complex c4=my_test();
-		EXPECT_EQ(c4.Re(),-13);
-		EXPECT_EQ(c4.Im(),76);
+		EXPECT_EQ(c4.Re(),-22);
+		EXPECT_EQ(c4.Im(),116);
 	}
 
 int main(int argc, char **argv)
