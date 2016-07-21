@@ -1,6 +1,8 @@
 CC=g++
-#.PHONY: all
-all: 
+.PHONY: all
+all: complex.o test.o test
+clean:
+	rm -rf *.o test
 complex.o: complex.cpp complex.h
 	g++ -c complex.cpp -o complex.o -I. -I/home/master/googletest/googletest/include
 test.o: test.cpp
