@@ -4,9 +4,9 @@
 using namespace std;
 
 #define setProperties(index, pass, login, buf)   \
-    buf->index   = index;   \
+   { buf->index   = index;   \
     buf->pass  = pass;   \
-    buf->login  = login;
+    buf->login  = login;}
 
 class PersonAuth
 {
@@ -24,7 +24,7 @@ int main()
 	some_person[2]=new PersonAuth(3,"Kate","pass3");
 
 	int index;
-	string pass, login; 
+	string pass, login;
 	cout<<"\nEnter index ";
 	cin>>index;
 	cout<<"\nEnter login ";
@@ -38,7 +38,7 @@ int main()
 
 	for (int i=0; i<3; i++)
 		delete some_person[i];
-	delete [] some_person;
+	//delete [] some_person;
 
 	return 0;
 }

@@ -18,7 +18,8 @@
 		Complex c1(4,5);
 		Complex c2(8,9);
 		Complex c3(4,5);
-		Complex c4 = (c1 + c2)* c3;
+		Complex c4 = (c1 + c2);
+		c4 = c4 * c3;
 		// maybe, more and more code...
 		return c4;
 	}

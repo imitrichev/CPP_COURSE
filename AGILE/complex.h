@@ -17,6 +17,7 @@ class Complex
         Complex operator-(const Complex&) const;
         Complex operator*(const Complex&) const;
         const Complex &operator=(const Complex &);
+	Complex(const Complex &right);
         const bool operator==(const Complex&) const;
         const bool  operator!=(const Complex&) const;
 		inline double Re(){return real;}
