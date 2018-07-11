@@ -62,7 +62,7 @@ int main()
 {
   Base *array[] =
   {
-     &One(), &Two()
+     new One(), new Two()
   };
   for (int i = 0; i < 2; i++)
   {
