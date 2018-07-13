@@ -13,7 +13,7 @@ class Compression
 class ZIP_Compression : public Compression
 {
   public:
-    void compress( const string & file ) {
+    virtual void compress( const string & file ) {
         cout << "ZIP compression" << endl;
     }
 };
@@ -21,7 +21,7 @@ class ZIP_Compression : public Compression
 class ARJ_Compression : public Compression
 {
   public:
-    void compress( const string & file ) {
+    virtual void compress( const string & file ) {
         cout << "ARJ compression" << endl;
     }
 };
@@ -29,7 +29,7 @@ class ARJ_Compression : public Compression
 class RAR_Compression : public Compression
 {
   public:
-    void compress( const string & file ) {
+    virtual void compress( const string & file ) {
         cout << "RAR compression" << endl;
     }
 };
@@ -44,13 +44,16 @@ class Compressor
     void compress( const string & file ) {
       p->compress( file);
     }
+    void substituteCompression(Compression* comp){p=comp;}
   private:
     Compression* p;
 };
  int main()
 {
-  Compressor* p = new Compressor( new ZIP_Compression);
-  p->compress( "file.txt");
-  delete p;
+  Compressor* c1 = new Compressor(new ZIP_Compression);
+  c1->compress( "file.txt");
+  c1->substituteCompression(new RAR_Compression);
+  c1->compress( "flower.txt");
+  delete c1;
   return 0;
 }
